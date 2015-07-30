@@ -3,12 +3,12 @@
 $menus = array();
 
 $tmp = array(
-	'modextra' => array(
-		'description' => 'modextra_menu_desc',
-		'action' => array(
-			'controller' => 'index',
-		),
-	),
+//	'modextra' => array(
+//		'description' => 'modextra_menu_desc',
+//		'action' => array(
+//			'controller' => 'index',
+//		),
+//	),
 );
 
 $i = 0;

@@ -203,6 +203,23 @@ if (defined('BUILD_SNIPPET_UPDATE')) {
 	}
 }
 
+/* add templates */
+if (defined('BUILD_TEMPLATE_UPDATE')) {
+    $attr[xPDOTransport::RELATED_OBJECT_ATTRIBUTES]['Templates'] = array(
+        xPDOTransport::PRESERVE_KEYS => false,
+        xPDOTransport::UPDATE_OBJECT => BUILD_TEMPLATE_UPDATE,
+        xPDOTransport::UNIQUE_KEY => 'name',
+    );
+    $templates = include $sources['data'] . 'transport.templates.php';
+    if (!is_array($templates)) {
+        $modx->log(modX::LOG_LEVEL_ERROR, 'Could not package in templates.');
+    }
+    else {
+        $category->addMany($templates);
+        $modx->log(modX::LOG_LEVEL_INFO, 'Packaged in ' . count($templates) . ' templates.');
+    }
+}
+
 /* add chunks */
 if (defined('BUILD_CHUNK_UPDATE')) {
 	$attr[xPDOTransport::RELATED_OBJECT_ATTRIBUTES]['Chunks'] = array(

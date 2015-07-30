@@ -3,10 +3,10 @@
 $chunks = array();
 
 $tmp = array(
-	'tpl.modExtra.item' => array(
-		'file' => 'item',
-		'description' => '',
-	),
+//	'tpl.modExtra.item' => array(
+//		'file' => 'item',
+//		'description' => '',
+//	),
 );
 
 // Save chunks for setup options

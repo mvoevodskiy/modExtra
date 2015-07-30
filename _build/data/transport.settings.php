@@ -2,13 +2,13 @@
 
 $settings = array();
 
-$tmp = array(/*
-	'some_setting' => array(
-		'xtype' => 'combo-boolean',
-		'value' => true,
-		'area' => 'modextra_main',
-	),
-	*/
+$tmp = array(
+//	'some_setting' => array(
+//		'xtype' => 'combo-boolean',
+//		'value' => true,
+//		'area' => 'modextra_main',
+//	),
+
 );
 
 foreach ($tmp as $k => $v) {

@@ -2,15 +2,15 @@
 
 $plugins = array();
 
-$tmp = array(/*
-	'modExtra' => array(
-		'file' => 'modextra',
-		'description' => '',
-		'events' => array(
-			'OnManagerPageInit' => array()
-		)
-	)
-	*/
+$tmp = array(
+//	'modExtra' => array(
+//		'file' => 'modextra',
+//		'description' => '',
+//		'events' => array(
+//			'OnManagerPageInit' => array()
+//		)
+//	)
+
 );
 
 foreach ($tmp as $k => $v) {

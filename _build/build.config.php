@@ -4,10 +4,11 @@
 define('PKG_NAME', 'modExtra');
 define('PKG_NAME_LOWER', strtolower(PKG_NAME));
 
-define('PKG_VERSION', '1.0.0');
-define('PKG_RELEASE', 'beta');
+define('PKG_VERSION', '0.0.1');
+define('PKG_RELEASE', 'alpha');
 define('PKG_AUTO_INSTALL', true);
 define('PKG_NAMESPACE_PATH', '{core_path}components/' . PKG_NAME_LOWER . '/');
+define('CA_DEVELOPER_MODE',true);
 
 /* define paths */
 if (isset($_SERVER['MODX_BASE_PATH'])) {
@@ -44,9 +45,10 @@ define('BUILD_PLUGIN_UPDATE', true);
 //define('BUILD_POLICY_TEMPLATE_UPDATE', true);
 //define('BUILD_PERMISSION_UPDATE', true);
 
-define('BUILD_CHUNK_STATIC', false);
-define('BUILD_SNIPPET_STATIC', false);
-define('BUILD_PLUGIN_STATIC', false);
+define('BUILD_TEMPLATE_STATIC', CA_DEVELOPER_MODE);
+define('BUILD_CHUNK_STATIC', CA_DEVELOPER_MODE);
+define('BUILD_SNIPPET_STATIC', CA_DEVELOPER_MODE);
+define('BUILD_PLUGIN_STATIC', CA_DEVELOPER_MODE);
 
 $BUILD_RESOLVERS = array(
 	'tables',

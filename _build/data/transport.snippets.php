@@ -3,10 +3,10 @@
 $snippets = array();
 
 $tmp = array(
-	'modExtra' => array(
-		'file' => 'modextra',
-		'description' => '',
-	),
+//	'modExtra' => array(
+//		'file' => 'modextra',
+//		'description' => '',
+//	),
 );
 
 foreach ($tmp as $k => $v) {
