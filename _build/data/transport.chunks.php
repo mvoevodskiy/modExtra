@@ -3,14 +3,14 @@
 $chunks = array();
 
 $tmp = array(
-	'tpl.modExtra.item' => array(
-		'file' => 'item',
-		'description' => '',
-	),
-	'tpl.modExtra.office' => array(
-		'file' => 'office',
-		'description' => '',
-	),
+//	'tpl.modExtra.item' => array(
+//		'file' => 'item',
+//		'description' => '',
+//	),
+//	'tpl.modExtra.office' => array(
+//		'file' => 'office',
+//		'description' => '',
+//	),
 );
 
 // Save chunks for setup options
