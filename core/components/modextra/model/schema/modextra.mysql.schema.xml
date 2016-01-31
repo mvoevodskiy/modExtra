@@ -2,7 +2,7 @@
 <model package="modextra" baseClass="xPDOObject" platform="mysql" defaultEngine="MyISAM" phpdoc-package="modextra"
 	   version="1.1">
 
-	<object class="modExtraItem" table="modextra_items" extends="xPDOSimpleObject">
+<!--	<object class="modExtraItem" table="modextra_items" extends="xPDOSimpleObject">
 		<field key="name" dbtype="varchar" precision="100" phptype="string" null="false" default=""/>
 		<field key="description" dbtype="text" phptype="text" null="true" default=""/>
 		<field key="active" dbtype="tinyint" precision="1" phptype="boolean" null="true" default="1"/>
@@ -13,6 +13,6 @@
 		<index alias="active" name="active" primary="false" unique="false" type="BTREE">
 			<column key="active" length="" collation="A" null="false"/>
 		</index>
-	</object>
+	</object>-->
 
 </model>
