@@ -1,13 +1,15 @@
 <?php
-
-if ($object->xpdo) {
-    /** @var modX $modx */
-    $modx =& $object->xpdo;
+/** @var xPDOTransport $transport */
+/** @var array $options */
+/** @var modX $modx */
+if ($transport->xpdo) {
+    $modx =& $transport->xpdo;
 
     switch ($options[xPDOTransport::PACKAGE_ACTION]) {
         case xPDOTransport::ACTION_INSTALL:
         case xPDOTransport::ACTION_UPGRADE:
-            $modelPath = $modx->getOption('modextra_core_path', null, $modx->getOption('core_path') . 'components/modextra/') . 'model/';
+            $modelPath = $modx->getOption('modextra_core_path', null,
+                    $modx->getOption('core_path') . 'components/modextra/') . 'model/';
             $modx->addPackage('modextra', $modelPath);
 
             $manager = $modx->getManager();
@@ -24,7 +26,7 @@ if ($object->xpdo) {
             }
             foreach ($objects as $tmp) {
                 $table = $modx->getTableName($tmp);
-                $sql = "SHOW TABLES LIKE '".trim($table,'`')."'";
+                $sql = "SHOW TABLES LIKE '" . trim($table, '`') . "'";
                 $stmt = $modx->prepare($sql);
                 $newTable = true;
                 if ($stmt->execute() && $stmt->fetchAll()) {
@@ -75,29 +77,6 @@ if ($object->xpdo) {
             break;
 
         case xPDOTransport::ACTION_UNINSTALL:
-            // Remove tables if it's need
-            /*
-            $modelPath = $modx->getOption('modextra_core_path', null, $modx->getOption('core_path') . 'components/modextra/') . 'model/';
-            $modx->addPackage('modextra', $modelPath);
-
-            $manager = $modx->getManager();
-            $objects = array();
-            $schemaFile = MODX_CORE_PATH . 'components/modextra/model/schema/modextra.mysql.schema.xml';
-            if (is_file($schemaFile)) {
-                $schema = new SimpleXMLElement($schemaFile, 0, true);
-                if (isset($schema->object)) {
-                    foreach ($schema->object as $obj) {
-                        $objects[] = (string)$obj['class'];
-                    }
-                }
-                unset($schema);
-            } else {
-                $modx->log(modX::LOG_LEVEL_ERROR, 'Could not get classes from schema file.');
-            }
-            foreach ($objects as $tmp) {
-                $manager->removeObjectContainer($tmp);
-            }
-            */
             break;
     }
 }
