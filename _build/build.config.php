@@ -57,4 +57,5 @@ $BUILD_RESOLVERS = array(
 //	'office',
 //  'extension',
 //  'sources',
+//    'tvs',
 );

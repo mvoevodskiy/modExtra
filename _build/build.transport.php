@@ -208,6 +208,23 @@ if (defined('BUILD_TEMPLATE_UPDATE')) {
     }
 }
 
+/* add tvs */
+if (defined('BUILD_TV_UPDATE')) {
+    $attr[xPDOTransport::RELATED_OBJECT_ATTRIBUTES]['TemplatesVars'] = array(
+        xPDOTransport::PRESERVE_KEYS => false,
+        xPDOTransport::UPDATE_OBJECT => BUILD_TEMPLATE_UPDATE,
+        xPDOTransport::UNIQUE_KEY => 'name',
+    );
+    $templateVars = include $sources['data'] . 'transport.templatevars.php';
+    if (!is_array($templateVars)) {
+        $modx->log(modX::LOG_LEVEL_ERROR, 'Could not package in template variables.');
+    }
+    else {
+        $category->addMany($templateVars);
+        $modx->log(modX::LOG_LEVEL_INFO, 'Packaged in ' . count($templateVars) . ' templates.');
+    }
+}
+
 /* add chunks */
 if (defined('BUILD_CHUNK_UPDATE')) {
     $attr[xPDOTransport::RELATED_OBJECT_ATTRIBUTES]['Chunks'] = array(
