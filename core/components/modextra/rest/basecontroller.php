@@ -20,7 +20,7 @@ class modExtraBaseRestController extends modRestController
     public function get()
     {
         if ($this->methodAllowed('get')) {
-            return parent::post();
+            return parent::get();
         } else {
             return $this->failure('Method not allowed');
         }
@@ -40,7 +40,7 @@ class modExtraBaseRestController extends modRestController
     public function put()
     {
         if ($this->methodAllowed('put')) {
-            return parent::post();
+            return parent::put();
         } else {
             return $this->failure('Method not allowed');
         }
@@ -50,7 +50,7 @@ class modExtraBaseRestController extends modRestController
     public function delete()
     {
         if ($this->methodAllowed('delete')) {
-            return parent::post();
+            return parent::delete();
         } else {
             return $this->failure('Method not allowed');
         }
